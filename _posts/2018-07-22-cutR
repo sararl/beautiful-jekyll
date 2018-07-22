@@ -1,0 +1,30 @@
+---
+layout: post
+title: Cut function in R without scientific notations 
+tags: [R, cut, dig.lab, scientific notation]
+#image: /img/hello_world.jpeg
+---
+
+I use cut to group data in R which I later plot with ggplot2. 
+
+```R
+data[,km_interval:=cut(maxlevel,seq(0,800000,by=50000))]
+```
+
+The output is a vector in scientific notation with my grouped data. This notation seems to be awful for ~~muggles~~ non-scientist so I want to avoid it in my plots.
+```R
+[1] [1,70]          [1,70]          (70,3.4e+04]    (70,3.4e+04]    (3.4e+04,1e+06] (3.4e+04,1e+06]
+Levels: [1,70] (70,3.4e+04] (3.4e+04,1e+06]
+```
+The solution is to use the argument dig.lab in cut function. When labels are not given it determines the number of digits used in formatting the break numbers.
+```R
+data[,km_interval:=cut(maxlevel,seq(0,800000,by=50000),dig.lab = 5)]
+```
+
+```R
+[1] [1,70]          [1,70]          (70,34000]      (70,34000]     
+[5] (34000,1000000] (34000,1000000]
+Levels: [1,70] (70,34000] (34000,1000000]
+```
+
+Easy trick..
