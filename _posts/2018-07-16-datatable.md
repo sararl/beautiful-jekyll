@@ -53,24 +53,24 @@ Overview of the data.table:
 > str(DT)
 ```
 ## The set family: 
-**Change columns names: setnames(DT,oldname,newname)**
+#####**Change columns names: setnames(DT,oldname,newname)**
 ```R
 # Change name of a column
-setnames(DT,"Shop","ShopID")
+> setnames(DT,"Shop","ShopID")
 
 # Change names of a few columns by name by position
-setnames(DT, c(2:3), paste0(c('a','b'), '_2'))
+> setnames(DT, c(2:3), paste0(c('a','b'), '_2'))
 
 # Change names of a few columns by name
-setnames(DT,c("a_2","b_2"),c("Units","Volume"))
+> setnames(DT,c("a_2","b_2"),c("Units","Volume"))
 ```
-**Change columns order: setcolorder(DT,colneworder)**
+#####**Change columns order: setcolorder(DT,colneworder)**
 ```R
-setcolorder(DT,c("ShopID","ClassID","Volume","Units","Mass"))
+> setcolorder(DT,c("ShopID","ClassID","Volume","Units","Mass"))
 ```
-** Change a specific value set(DT, row, column, new value)**
+#####**Change a specific value set(DT, row, column, new value)**
 ```R
-set(DT,9,3,320)
+> set(DT,9,3,320)
 ```
 Once you know *data.table* you'll love it! Not only will you reduce the computing time in your programs, but also your programming time.
 
