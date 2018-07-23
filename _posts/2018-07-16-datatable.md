@@ -53,7 +53,7 @@ Overview of the data.table:
 > str(DT)
 ```
 ## The set family: 
-#####**Change columns names: setnames(DT,oldname,newname)**
+**Change columns names: setnames(DT,oldname,newname)**
 ```R
 # Change name of a column
 > setnames(DT,"Shop","ShopID")
@@ -64,13 +64,33 @@ Overview of the data.table:
 # Change names of a few columns by name
 > setnames(DT,c("a_2","b_2"),c("Units","Volume"))
 ```
-#####**Change columns order: setcolorder(DT,colneworder)**
+**Change columns order: setcolorder(DT,colneworder)**
 ```R
 > setcolorder(DT,c("ShopID","ClassID","Volume","Units","Mass"))
 ```
-#####**Change a specific value set(DT, row, column, new value)**
+**Change a specific value set(DT, row, column, new value)**
 ```R
 > set(DT,9,3,320)
+```
+
+## Selection of rows using i
+
+**Select a number of rows**
+```R
+> DT[1:5]
+> DT[1:5,]
+```
+
+**Select all rows that have a specific value in  a column**
+```R
+> DT[ClassID == "LowCost"]
+> DT[ClassID != "LowCost"]
+```
+
+**Select all rows that have value x or y in a column**
+```R
+> DT[ClassID %in% c("Premium", "LowCost")]
+> DT[Volume > 100]
 ```
 Once you know *data.table* you'll love it! Not only will you reduce the computing time in your programs, but also your programming time.
 
