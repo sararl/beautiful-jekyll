@@ -52,10 +52,9 @@ Overview of the data.table:
 > tail(DT)
 > str(DT)
 ```
-##The set family: change columns names (setnames), columns order (setcolorder) or a specific value (set)
+## The set family: 
+**Change columns names: setnames(DT,oldname,newname)**
 ```R
-# setnames(DT,oldname,newname)
-
 # Change name of a column
 setnames(DT,"Shop","ShopID")
 
@@ -65,14 +64,12 @@ setnames(DT, c(2:3), paste0(c('a','b'), '_2'))
 # Change names of a few columns by name
 setnames(DT,c("a_2","b_2"),c("Units","Volume"))
 ```
-
+**Change columns order: setcolorder(DT,colneworder)**
 ```R
-# Reorder columns setcolorder(DT,colneworder)
 setcolorder(DT,c("ShopID","ClassID","Volume","Units","Mass"))
 ```
-
+** Change a specific value set(DT, row, column, new value)**
 ```R
-# Change value by position:  set(DT, row, column, new value)
 set(DT,9,3,320)
 ```
 Once you know *data.table* you'll love it! Not only will you reduce the computing time in your programs, but also your programming time.
