@@ -5,7 +5,7 @@ tags: [python, folium, plugin,geographical information]
 #image: /img/hello_world.jpeg
 ---
 
-Folium has a package which wraps some of the most popular leaflet external plugins. In this post I will focus on two of the plugins that I find more interesting to add to a map that will be delivered to a client.
+Folium has a package which wraps some of the most popular leaflet external plugins. In this post I will focus on two of the plugins that I find more interesting to add to a map that will be presented or delivered to a client.
 
 Float image plugin adds a floating image in HTML canvas on top of the map. It would be very useful to add your personal information or your company logo ~~or a funny image~~. The current method doesn't allow you to modify the width and height of the image, in a future post I'll show you how to face it.
 
