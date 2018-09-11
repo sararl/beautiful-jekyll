@@ -34,9 +34,10 @@ Fullscreen plugin adds a fullscreen button to your map. I consider this is a won
 
 *It seems that the fullscreen button doesn't work in the html embebed in the website iframe, but test yourself. It works when you open the html file.*
 ```python
+from folium.plugins import Fullscreen
 mapa_Malaga_plugin = folium.Map(location=[36.715090, -4.461963], zoom_start=12)
 
-pluginCompleta = plugins.Fullscreen(
+pluginCompleta = Fullscreen(
                 position='topleft',
                 title='Change to fullscreen',
                 title_cancel='Exit',
